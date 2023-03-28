@@ -1,11 +1,10 @@
-import express from "express";
 import bodyParser from "body-parser";
-import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import multer from "multer";
+import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
+import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -32,3 +31,4 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   }
 })
+const upload = multer({ storage })
